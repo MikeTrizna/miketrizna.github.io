@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ico/favicon.png">
+
+    <title>Progress Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap-treeview.css" rel="stylesheet">
+    <link href="assets/vis.min.css" rel="stylesheet">
+
+    <style>
+   body{
+    background-color: #F3F3F3;
+   }
+   .title_row{
+    text-align:center;
+   }
+   .row{
+    border-bottom: 1px black;
+   }
+   </style>
+
+</head>
+
+  <body>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-md-6 col-md-offset-3 title_row'>
+          <h2>Progress Dashboard</h2>
+          <h4>Brazil Ants <img src='assets/ant.png' height='20'></h4>
+          <p><em>Last Updated on Monday, 22 September, 2014</em></p>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-6 col-md-offset-3'>
+            <h3 class='title_row'>Overall Totals</h3>
+            <div style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
+              <div id="ant_totals" style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
+              </div>
+            </div>
+        </div>
+      </div>  
+      <div class='row'>
+        <div class='col-md-6 col-md-offset-3'>
+          <h3 class='title_row'>Timeline</h3>
+          <div id="timeline"></div>
+        </div>
+      </div>          
+    </div>
+      <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="assets/bootstrap-treeview.js"></script>
+    <script type="text/javascript" src="assets/vis.min.js"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Step', 'Unique', 'Total'],
+          ['FIMS',  846,      846],
+          ['Extracted',  846,      846],
+          ['PCR',  846,       1974],
+          ['Sequenced',  846,      1692],
+          ['Assembled',  667,      889],
+        ]);
+
+        var options = {
+          title: 'Overall Progress'
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('ant_totals'));
+
+        chart.draw(data, options);
+      }
+    </script>  
+
+<script type="text/javascript">
+  var groups = new vis.DataSet([
+    {id: 0, content: 'FIMS Upload', value: 1},
+    {id: 1, content: 'Extraction', value: 2},
+    {id: 2, content: 'PCR', value: 3},
+    {id: 3, content: 'Sequencing', value: 4},
+  ]);
+
+  // create a dataset with items
+  // note that months are zero-based in the JavaScript Date object, so month 3 is April
+  var items = new vis.DataSet([
+{id: 1, group: 0, content: 'Brazil_Ants_B (94)', start: '2014-06-17'},
+{id: 2, group: 0, content: 'Brazil_Ants_C (94)', start: '2014-06-17'},
+{id: 3, group: 0, content: 'Brazil_Ants_D (94)', start: '2014-06-17'},
+{id: 4, group: 0, content: 'Brazil_Ants_E (94)', start: '2014-06-17'},
+{id: 5, group: 0, content: 'Brazil_Ants_F (94)', start: '2014-06-17'},
+{id: 6, group: 0, content: 'Brazil_Ants_G (94)', start: '2014-06-17'},
+{id: 7, group: 0, content: 'Brazil_Ants_H (94)', start: '2014-06-17'},
+{id: 8, group: 0, content: 'Brazil_Ants_I (94)', start: '2014-06-17'},
+{id: 9, group: 0, content: 'Brazil_Ants_J (94)', start: '2014-06-17'},
+
+{id: 52, group: 1, content: 'BrAntB_X1_010714 (94)', start: '2014-01-07'},
+{id: 53, group: 2, content: 'BrAntB_PCR1_LCO-HCO_042114 (94)', start: '2014-04-21'},
+{id: 54, group: 1, content: 'BrAntC_X1_011614 (94)', start: '2014-01-16'},
+{id: 55, group: 1, content: 'BrAntD_X1_112514 (94)', start: '2013-11-25'},
+{id: 56, group: 1, content: 'BrAntE_X1_011614 (94)', start: '2014-01-16'},
+{id: 57, group: 1, content: 'BrAntF_X1_032714 (94)', start: '2014-03-27'},
+{id: 58, group: 1, content: 'BrAntJ_X1_032714 (94)', start: '2014-03-27'},
+{id: 59, group: 1, content: 'BrAntG_X1_032714 (94)', start: '2014-03-27'},
+{id: 60, group: 1, content: 'BrAntH_X1_112613 (94)', start: '2013-11-11'},
+{id: 61, group: 1, content: 'BrAntI_X1_032714 (94)', start: '2014-03-27'},
+{id: 62, group: 2, content: 'BrAntB_PCR2_ReptBCF-HCO_042114 (94)', start: '2014-04-21'},
+{id: 63, group: 2, content: 'BrAntC_PCR1_ReptBCF-HCO_042114 (94)', start: '2014-04-21'},
+{id: 64, group: 2, content: 'BrAntD_PCR1_ReptBCF-HCO_042214 (94)', start: '2014-04-22'},
+{id: 65, group: 2, content: 'BrAntE_PCR1_ReptBCF-HCO_042214 (94)', start: '2014-04-22'},
+{id: 66, group: 3, content: 'BrAntB_CycSeq_ReptBCF_042214 (94)', start: '2014-04-22'},
+{id: 67, group: 3, content: 'BrAntB_CycSeq_HCO2198_042214 (94)', start: '2014-04-22'},
+{id: 68, group: 3, content: 'BrAntC_CycSeq_ReptBCF_042214 (94)', start: '2014-04-22'},
+{id: 69, group: 3, content: 'BrAntC_CycSeq_HCO2198_042214 (94)', start: '2014-04-22'},
+{id: 70, group: 3, content: 'BrAntD_CycSeq_ReptBCF_042314 (94)', start: '2014-04-23'},
+{id: 71, group: 3, content: 'BrAntD_CycSeq_HCO2198_042314 (94)', start: '2014-04-23'},
+{id: 72, group: 3, content: 'BrAntE_CycSeq_ReptBCF_042314 (94)', start: '2014-04-23'},
+{id: 73, group: 3, content: 'BrAntE_CycSeq_HCO2198_042314 (94)', start: '2014-04-22'},
+{id: 74, group: 2, content: 'BrAntF_PCR1_ReptBCF-HCO_042414 (94)', start: '2014-04-24'},
+{id: 75, group: 2, content: 'BrAntG_PCR1_ReptBCF-HCO_042414 (94)', start: '2014-04-24'},
+{id: 76, group: 2, content: 'BrAntH_PCR1_ReptBCF-HCO_042414 (94)', start: '2014-04-24'},
+{id: 77, group: 2, content: 'BrAntI_PCR1_ReptBCF-HCO_042414 (94)', start: '2014-04-24'},
+{id: 78, group: 2, content: 'BrAntF_PCR2_LCO-HCO_042514 (94)', start: '2014-04-25'},
+{id: 79, group: 2, content: 'BrAntG_PCR2_LCO-HCO_042514 (94)', start: '2014-04-25'},
+{id: 80, group: 2, content: 'BrAntF_PCR3_dgFol_042514 (94)', start: '2014-04-25'},
+{id: 81, group: 2, content: 'BrAntG_PCR3_dgFol_042514 (94)', start: '2014-04-25'},
+{id: 82, group: 2, content: 'BrAntH_PCR2_dgFol_042814 (94)', start: '2014-04-28'},
+{id: 83, group: 2, content: 'BrAntI_PCR2_dgFol_042814 (94)', start: '2014-04-28'},
+{id: 84, group: 3, content: 'BrAntG_CycSeq_dgLCO1490_042914 (94)', start: '2014-04-29'},
+{id: 85, group: 3, content: 'BrAntG_CycSeq_dgHCO2198_042914 (94)', start: '2014-04-29'},
+{id: 86, group: 3, content: 'BrantH_CycSeq_dgLCO1490_050614 (94)', start: '2014-05-06'},
+{id: 87, group: 3, content: 'BrantH_CycSeq_dgHCO2198_050614 (94)', start: '2014-05-06'},
+{id: 88, group: 3, content: 'BrAntI_CycSeq_dgLCO1490_050614 (94)', start: '2014-05-06'},
+{id: 89, group: 3, content: 'BrAntI_CycSeq_dgHCO2198_050614 (94)', start: '2014-05-06'},
+{id: 90, group: 2, content: 'BrAntJ_PCR1_dgFol_042814 (94)', start: '2014-04-28'},
+{id: 91, group: 2, content: 'BrAntF_PCR4_LepF1R1_042914 (94)', start: '2014-04-29'},
+{id: 92, group: 3, content: 'BrAntF_CycSeq_LepF1_050114 (94)', start: '2014-05-01'},
+{id: 93, group: 3, content: 'BrAntF_CycSeq_LepR1_050114 (94)', start: '2014-05-01'},
+{id: 94, group: 2, content: 'BrAntJ_PCR2_LepF1R1_042914 (94)', start: '2014-04-29'},
+{id: 95, group: 2, content: 'BrAntF_PCR5_LepF1R1_40cycles_042914 (94)', start: '2014-04-30'},
+{id: 96, group: 2, content: 'BrAntJ_PCR3_ReptBCFR1_nested_043014 (94)', start: '2014-04-29'},
+{id: 97, group: 2, content: 'BrAntJ_PCR4_ReptBCF-LepR1_050114 (94)', start: '2014-05-01'},
+{id: 98, group: 3, content: 'BrAntJ_CycSeq_LepF1&ReptBCF_050614 (94)', start: '2014-05-06'},
+{id: 99, group: 3, content: 'BrAntJ_CycSeq_LepR1_050614 (94)', start: '2014-05-02'},
+  ]);
+
+  // create visualization
+  var container = document.getElementById('timeline');
+  var options = {
+    // option groupOrder can be a property name or a sort function
+    // the sort function must compare two groups and return a value
+    //     > 0 when a > b
+    //     < 0 when a < b
+    //       0 when a == b
+    groupOrder: function (a, b) {
+      return a.value - b.value;
+    },
+    editable: false
+  };
+
+  var timeline = new vis.Timeline(container);
+  timeline.setOptions(options);
+  timeline.setGroups(groups);
+  timeline.setItems(items);
+</script>          
+  </body>
+</html>
