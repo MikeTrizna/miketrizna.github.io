@@ -31,8 +31,13 @@
       <div class='row'>
         <div class='col-md-6 col-md-offset-3 title_row'>
           <h2>Barcode of Wildlife Project Progress Dashboard</h2>
-          <h4>Kenya <img src='assets/kenya.png' height='20'></h4>
-          <p><em>Last Updated on Wednesday, 17 September, 2014</em></p>
+          <ul class="nav nav-pills nav-justified">
+            <li class="active"><a href="dashboard_kenya.html">Kenya <img src='assets/kenya.png' height='20'></a></li>
+            <li><a href="dashboard_mexico.html">Mexico <img src='assets/mexico.png' height='20'></a></li>
+            <li><a href="dashboard_nigeria.html">Nigeria <img src='assets/nigeria.png' height='20'></a></li>
+            <li><a href="dashboard_sa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
+          </ul>
+          <p><em>Last Updated on Monday, 22 September, 2014</em></p>
         </div>
       </div>
       <div class='row'>
@@ -65,7 +70,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Step', 'Unique', 'Total'],
-          ['FIMS',  470,      470],
+          ['FIMS',  339,      339],
           ['Extracted',  24,      48],
           ['PCR',  24,       24],
           ['Sequenced',  0,      0],
@@ -88,20 +93,19 @@
     {id: 1, content: 'Extraction', value: 2},
     {id: 2, content: 'PCR', value: 3},
     {id: 3, content: 'Sequencing', value: 4},
-    {id: 4, content: 'Assembly', value: 5},
   ]);
 
   // create a dataset with items
   // note that months are zero-based in the JavaScript Date object, so month 3 is April
   var items = new vis.DataSet([
-    {id: 0, group: 0, content: 'KWS_AAM_001 (94)', start: '2014-08-22'},
-    {id: 1, group: 0, content: 'KWS_AAM_002 (94)', start: '2014-08-19'},
-    {id: 2, group: 0, content: 'NMK_EFGJ_P002 (94)', start: '2014-09-03'},
-    {id: 3, group: 0, content: 'NMK_EFGJ_P003 (94)', start: '2014-09-03'},
-    {id: 4, group: 0, content: 'NMK_PAA_001 (94)', start: '2014-08-21'},
+    {id: 0, group: 0, content: 'KWS_AAM_001 (94)', start: '2014-08-18'},
+    {id: 1, group: 0, content: 'KWS_AAM_002 (16)', start: '2014-08-19'},
+    {id: 2, group: 0, content: 'NMK_EFGJ_P002 (94)', start: '2014-08-13'},
+    {id: 3, group: 0, content: 'NMK_EFGJ_P003 (76)', start: '2014-08-13'},
+    {id: 4, group: 0, content: 'NMK_PAA_001 (59)', start: '2014-08-21'},
     {id: 5, group: 1, content: 'NMK_EFGJ_P002_X01 (24)', start: '2014-07-28'},
     {id: 6, group: 2, content: 'NMK_EFGJ_P002_rbcla-F_rbclr590 (24)', start: '2014-07-30'},
-    {id: 7, group: 1, content: 'NMK_EFGJ_P002_X02 (24)', start: '2014-09-17'}
+    {id: 7, group: 1, content: 'NMK_EFGJ_P002_X02 (70)', start: '2014-09-18'}
   ]);
 
   // create visualization

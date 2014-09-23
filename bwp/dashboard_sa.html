@@ -33,9 +33,9 @@
           <h2>Barcode of Wildlife Project Progress Dashboard</h2>
           <ul class="nav nav-pills nav-justified">
             <li><a href="dashboard_kenya.html">Kenya <img src='assets/kenya.png' height='20'></a></li>
-            <li class="active"><a href="dashboard_mexico.html">Mexico <img src='assets/mexico.png' height='20'></a></li>
+            <li><a href="dashboard_mexico.html">Mexico <img src='assets/mexico.png' height='20'></a></li>
             <li><a href="dashboard_nigeria.html">Nigeria <img src='assets/nigeria.png' height='20'></a></li>
-            <li><a href="dashboard_sa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
+            <li class="active"><a href="dashboard_sa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
           </ul>
           <p><em>Last Updated on Friday, 12 September, 2014</em></p>
         </div>
@@ -70,7 +70,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Step', 'Unique', 'Total'],
-          ['FIMS',  288,      288],
+          ['FIMS',  0,      0],
           ['Extracted',  0,      0],
           ['PCR',  0,       0],
           ['Sequenced',  0,      0],
@@ -98,9 +98,7 @@
   // create a dataset with items
   // note that months are zero-based in the JavaScript Date object, so month 3 is April
   var items = new vis.DataSet([
-    {id: 0, group: 0, content: 'IBUNAM_LCM_001 (96)', start: '2014-08-26'},
-    {id: 1, group: 0, content: 'IBUNAM_LCM_002 (96)', start: '2014-09-03'},
-    {id: 2, group: 0, content: 'IBUNAM_LCM_003 (96)', start: '2014-09-08'}
+
   ]);
 
   // create visualization
