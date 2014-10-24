@@ -37,7 +37,7 @@
             <li><a href="dashboard_nigeria.html">Nigeria <img src='assets/nigeria.png' height='20'></a></li>
             <li><a href="dashboard_sa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
           </ul>
-          <p><em>Last Updated on Monday, 22 September, 2014</em></p>
+          <p><em>Last Updated on Friday, 24 October, 2014</em></p>
         </div>
       </div>
       <div class='row'>
@@ -70,7 +70,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Step', 'Unique', 'Total'],
-          ['FIMS',  288,      288],
+          ['FIMS',  477,      477],
           ['Extracted',  0,      0],
           ['PCR',  0,       0],
           ['Sequenced',  0,      0],
@@ -98,9 +98,11 @@
   // create a dataset with items
   // note that months are zero-based in the JavaScript Date object, so month 3 is April
   var items = new vis.DataSet([
-    {id: 0, group: 0, content: 'IBUNAM_LCM_001 (96)', start: '2014-08-26'},
-    {id: 1, group: 0, content: 'IBUNAM_LCM_002 (96)', start: '2014-09-03'},
-    {id: 2, group: 0, content: 'IBUNAM_LCM_003 (96)', start: '2014-09-08'}
+    {id: 0, group: 0, content: 'IBUNAM_LCM_001 (95)', start: '2014-08-26'},
+    {id: 1, group: 0, content: 'IBUNAM_LCM_002 (95)', start: '2014-09-03'},
+    {id: 2, group: 0, content: 'IBUNAM_LCM_003 (96)', start: '2014-09-08'},
+    {id: 2, group: 0, content: 'IBUNAM_LCM_004 (95)', start: '2014-09-08'},
+    {id: 2, group: 0, content: 'IBUNAM_AJM_001 (96)', start: '2014-10-14'}
   ]);
 
   // create visualization
