@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,16 +36,16 @@
             <li><a href="dashboard_kenya.html">Kenya <img src='assets/kenya.png' height='20'></a></li>
             <li class="active"><a href="dashboard_mexico.html">Mexico <img src='assets/mexico.png' height='20'></a></li>
             <li><a href="dashboard_nigeria.html">Nigeria <img src='assets/nigeria.png' height='20'></a></li>
-            <li><a href="dashboard_sa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
+            <li><a href="dashboard_south_africa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
           </ul>
-          <p><em>Last Updated on Tuesday, 4 November, 2014</em></p>
+          <p><em>Last Updated on <span id='last_updated'></span></em></p>
         </div>
       </div>
       <div class='row'>
         <div class='col-md-6 col-md-offset-3'>
             <h3 class='title_row'>Overall Totals</h3>
             <div style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
-              <div id="ant_totals" style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
+              <div id="totals_chart" style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
               </div>
             </div>
         </div>
@@ -64,16 +65,20 @@
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="assets/bootstrap-treeview.js"></script>
     <script type="text/javascript" src="assets/vis.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/MikeTrizna/BWP-FIMS-and-LIMS/master/Dashboard/all_data.js"></script>
+    <script type="text/javascript">
+      document.getElementById('last_updated').innerText = last_update;
+    </script>
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Step', 'Unique', 'Total'],
-          ['FIMS',  719,      719],
-          ['Extracted',  0,      0],
-          ['PCR',  0,       0],
-          ['Sequenced',  0,      0],
+          ['FIMS',  totals_data.mx.fims.unique,      totals_data.mx.fims.total],
+          ['Extracted',  totals_data.mx.extraction.unique,      totals_data.mx.extraction.unique],
+          ['PCR',  totals_data.mx.pcr.unique,       totals_data.mx.pcr.unique],
+          ['Sequenced',  totals_data.mx.sequenced.unique,      totals_data.mx.sequenced.unique],
           ['Assembled',  0,      0],
         ]);
 
@@ -81,7 +86,7 @@
           title: 'Overall Progress'
         };
 
-        var chart = new google.visualization.BarChart(document.getElementById('ant_totals'));
+        var chart = new google.visualization.BarChart(document.getElementById('totals_chart'));
 
         chart.draw(data, options);
       }
@@ -97,15 +102,7 @@
 
   // create a dataset with items
   // note that months are zero-based in the JavaScript Date object, so month 3 is April
-  var items = new vis.DataSet([
-    {id: 0, group: 0, content: 'IBUNAM_LCM_001 (95)', start: '2014-08-26'},
-    {id: 1, group: 0, content: 'IBUNAM_LCM_002 (95)', start: '2014-09-03'},
-    {id: 2, group: 0, content: 'IBUNAM_LCM_003 (96)', start: '2014-09-08'},
-    {id: 3, group: 0, content: 'IBUNAM_LCM_004 (95)', start: '2014-09-08'},
-    {id: 4, group: 0, content: 'IBUNAM_AJM_001 (96)', start: '2014-10-14'},
-    {id: 5, group: 0, content: 'IBUNAM_AJM_002 (96)', start: '2014-10-27'},
-    {id: 6, group: 0, content: 'IBUNAM_AJM_003 (146)', start: '2014-10-27'}
-  ]);
+  var items = new vis.DataSet(timeline_data.mx);
 
   // create visualization
   var container = document.getElementById('timeline');
