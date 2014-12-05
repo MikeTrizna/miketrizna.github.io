@@ -10,8 +10,6 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/bootstrap-treeview.css" rel="stylesheet">
-    <link href="assets/vis.min.css" rel="stylesheet">
 
     <style>
    body{
@@ -31,97 +29,16 @@
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-6 col-md-offset-3 title_row'>
-          <h2>Barcode of Wildlife Project Progress Dashboard</h2>
-          <ul class="nav nav-pills nav-justified">
-            <li><a href="dashboard_kenya.html">Kenya <img src='assets/kenya.png' height='20'></a></li>
-            <li class="active"><a href="dashboard_mexico.html">Mexico <img src='assets/mexico.png' height='20'></a></li>
-            <li><a href="dashboard_nigeria.html">Nigeria <img src='assets/nigeria.png' height='20'></a></li>
-            <li><a href="dashboard_south_africa.html">South Africa <img src='assets/south_africa.png' height='20'></a></li>
-          </ul>
-          <p><em>Last Updated on <span id='last_updated'></span></em></p>
+           <p>This page has moved to <a href="http://barcodeofwildlife.org/dashboard/mexico.html">http://barcodeofwildlife.org/dashboard/mexico.html</a>. Please update your bookmarks.</p>
         </div>
       </div>
-      <div class='row'>
-        <div class='col-md-6 col-md-offset-3'>
-            <h3 class='title_row'>Overall Totals</h3>
-            <div style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
-              <div id="totals_chart" style="min-height:200px;height: 100%;width: 100%;margin:auto;background:#fff;text-align:center">
-              </div>
-            </div>
-        </div>
-      </div>  
-      <div class='row'>
-        <div class='col-md-6 col-md-offset-3'>
-          <h3 class='title_row'>Timeline</h3>
-          <div id="timeline"></div>
-        </div>
-      </div>          
+              
     </div>
       <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>    
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript" src="assets/bootstrap-treeview.js"></script>
-    <script type="text/javascript" src="assets/vis.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/MikeTrizna/BWP-FIMS-and-LIMS/master/Dashboard/all_data.js"></script>
-    <script type="text/javascript">
-      document.getElementById('last_updated').innerText = last_update;
-    </script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Step', 'Unique', 'Total'],
-          ['FIMS',  totals_data.mx.fims.unique,      totals_data.mx.fims.total],
-          ['Extracted',  totals_data.mx.extraction.unique,      totals_data.mx.extraction.unique],
-          ['PCR',  totals_data.mx.pcr.unique,       totals_data.mx.pcr.unique],
-          ['Sequenced',  totals_data.mx.sequenced.unique,      totals_data.mx.sequenced.unique],
-          ['Assembled',  0,      0],
-        ]);
 
-        var options = {
-          title: 'Overall Progress'
-        };
-
-        var chart = new google.visualization.BarChart(document.getElementById('totals_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>  
-
-<script type="text/javascript">
-  var groups = new vis.DataSet([
-    {id: 0, content: 'FIMS Upload', value: 1},
-    {id: 1, content: 'Extraction', value: 2},
-    {id: 2, content: 'PCR', value: 3},
-    {id: 3, content: 'Sequencing', value: 4},
-  ]);
-
-  // create a dataset with items
-  // note that months are zero-based in the JavaScript Date object, so month 3 is April
-  var items = new vis.DataSet(timeline_data.mx);
-
-  // create visualization
-  var container = document.getElementById('timeline');
-  var options = {
-    // option groupOrder can be a property name or a sort function
-    // the sort function must compare two groups and return a value
-    //     > 0 when a > b
-    //     < 0 when a < b
-    //       0 when a == b
-    groupOrder: function (a, b) {
-      return a.value - b.value;
-    },
-    editable: false
-  };
-
-  var timeline = new vis.Timeline(container);
-  timeline.setOptions(options);
-  timeline.setGroups(groups);
-  timeline.setItems(items);
-</script>          
   </body>
 </html>
