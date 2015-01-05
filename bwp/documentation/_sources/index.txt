@@ -1,0 +1,29 @@
+Welcome to the Barcode of Wildlife Project Informatics documentation!
+=====================================================================
+
+Here is some basic introductory text about what we'll be covering in this documentation.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   Overview <overview>
+   Tissue Collection <tissue_collection>
+   Create Batch and FIMS Spreadsheet <fims_spreadsheet>
+   DNA Extraction <dna_extraction>
+   Quality Control <quality_control>
+   PCR <pcr>
+   Cherry Picking <cherry_picking>
+   Cycle Sequencing <cycle_sequencing>
+   Sequence Analysis <sequence_analysis>
+   GenBank Upload <gb_upload>
+   Resources <resources>
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+
