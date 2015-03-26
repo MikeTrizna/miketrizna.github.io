@@ -9,14 +9,11 @@ Contents:
    :maxdepth: 2
 
    Overview <overview>
-   Tissue Collection <tissue_collection>
-   Create Batch and FIMS Spreadsheet <fims_spreadsheet>
-   DNA Extraction <dna_extraction>
-   Quality Control <quality_control>
-   PCR <pcr>
-   Cherry Picking <cherry_picking>
-   Cycle Sequencing <cycle_sequencing>
-   Sequence Analysis <sequence_analysis>
+   Barcode Data Standard <data_standard>
+   Workflow and Naming Conventions <conventions>
+   FIMS Spreadsheet Validation and Upload <fims_spreadsheet>
+   Geneious LIMS (coming soon) <lims>
+   Sequence Editing Checklist <sequence_editing>
    GenBank Upload <gb_upload>
    Resources <resources>
 
