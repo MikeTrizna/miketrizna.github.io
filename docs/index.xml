@@ -5,14 +5,14 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>blog</title>
+<title>Open Mike</title>
 <link>miketrizna.github.io/</link>
 <atom:link href="miketrizna.github.io/index.xml" rel="self" type="application/rss+xml"/>
-<description>A blog built with Quarto</description>
+<description>Mike&#39;s personal website and blog</description>
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Thu, 16 Oct 2025 04:00:00 GMT</lastBuildDate>
 <item>
-  <title>Welcome To My Blog</title>
+  <title>Writing practice</title>
   <dc:creator>Mike Trizna</dc:creator>
   <link>miketrizna.github.io/posts/welcome/</link>
   <description><![CDATA[ 
@@ -21,9 +21,10 @@
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="miketrizna.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+
+<p>I’ve come to realize that my writing skills – whatever they were – have atrophied quite a bit, and I want to use the “opportunity” of my government shutdown furlough to practice writing.</p>
+<p><img src="miketrizna.github.io/posts/welcome/quarto-stock-cafe.jpg" class="img-fluid"></p>
+<p>Hopefully setting up this personal website and blog provide the right balance of technical tinkering to tickle my brain, while also giving me a space to write a little something every couple of days.</p>
 
 
 

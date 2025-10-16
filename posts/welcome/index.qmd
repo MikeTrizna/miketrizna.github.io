@@ -1,12 +1,12 @@
 ---
-title: "Welcome To My Blog"
+title: "Writing practice"
 author: "Mike Trizna"
 date: "2025-10-16"
 categories: 
 ---
 
-This is the first post in a Quarto blog. Welcome!
+I've come to realize that my writing skills -- whatever they were -- have atrophied quite a bit, and I want to use the "opportunity" of my government shutdown furlough to practice writing.
 
-![](thumbnail.jpg)
+![](quarto-stock-cafe.jpg)
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+Hopefully setting up this personal website and blog provide the right balance of technical tinkering to tickle my brain, while also giving me a space to write a little something every couple of days.

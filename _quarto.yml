@@ -3,18 +3,24 @@ project:
   output-dir: docs
 
 website:
-  description: "A blog built with Quarto"
+  description: "Mike's personal website and blog"
   site-url: miketrizna.github.io
-  title: "blog"
+  title: "Open Mike"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+    right:
+      - icon: rss
+        href: index.xml
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
 
 
