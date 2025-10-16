@@ -1,8 +1,0 @@
-Overview
-========
-
-This will just be an overview of the workflow.
-
-Look you can even include images...
-
-.. image:: /images/whiteboard.jpg

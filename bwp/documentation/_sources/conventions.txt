@@ -1,4 +1,0 @@
-Workflow and Naming Conventions
-===============================
-
-Fill in content here.
