@@ -13,6 +13,8 @@ website:
       - href: about.qmd
         text: About
     right:
+      - icon: github
+        href: https://github.com/MikeTrizna/miketrizna.github.io
       - icon: rss
         href: index.xml
 
