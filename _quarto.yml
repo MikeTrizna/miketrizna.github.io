@@ -1,11 +1,10 @@
 project:
   type: website
-  output-dir: docs
 
 website:
   description: "Mike's personal website and blog"
   site-url: miketrizna.github.io
-  title: "Open Mike"
+  title: "Open Mike 🎙️"
   navbar:
     left:
       - href: index.qmd
